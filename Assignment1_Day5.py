@@ -2,12 +2,12 @@
 
 
 class Circle:
-    def create(r):
+    def create(self,r):
         c=Circle()
         c.r=r
         return c
 
-    def is_valid(c):
+    def is_valid(self,c):
         return isinstance(c,Circle) and c.r>0 
 
     def perimeter(self,c):
