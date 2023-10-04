@@ -74,26 +74,44 @@ class LinkedList:
             n=n.nextnode
         str+=")"
         print(str)
-        
-ll = LinkedList()
-'''maxi=100
-for i in range(1,maxi+1):
-    ll.append(i)'''
-ll.append(10)
-ll.append(10)
-ll.append(11)
-ll.append(12)
-print("..........................................")
-ll.print_info()
-print("..........................................")
-size=ll.sizee()
-print(f'The size of linked list is {size}')
-print("..........................................")
-print(f'The number 10 is occured for {ll.count(10)} times')
-print("...........................................")
-while size>0:
-    print(f"The removed item is {ll.remove_last()}")
-    size-=1
-print("..........................................")
-ll.print_info()
-print(f"size {ll.sizee()}")
+
+    def value(self,val):
+        v=[]
+        if self.head==None:
+            return 
+        temp=self.head
+        while temp!=None:
+            v.append(temp.data)
+            temp=temp.nextnode
+        if val in v:
+            return True
+            
+def main():        
+    ll = LinkedList()
+    maxi=50000
+    start=time.time()
+    for i in range(1,maxi+1):
+        ll.append(i)
+    end=time.time()
+    ll.append(10)
+    ll.append(10)
+    ll.append(11)
+    ll.append(12)
+    print("..........................................")
+    ll.print_info()
+    print("..........................................")
+    size=ll.sizee()
+    print(f'The size of linked list is {size}')
+    print("..........................................")
+    print(f'The number 10 is occured for {ll.count(10)} times')
+    print("...........................................")
+    while size>0:
+        print(f"The removed item is {ll.remove_last()}")
+        size-=1
+    print("..........................................")
+    ll.print_info()
+    print(f"size {ll.sizee()}")
+    print(ll.value(11))
+    
+
+main()
