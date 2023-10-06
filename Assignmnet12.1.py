@@ -27,6 +27,7 @@ def cache(fn):
 def factorial(n):
     fn=1
     for i in range(1,n+1):
+        time.sleep(0.5)
         fn*=i
     return n,fn
 
