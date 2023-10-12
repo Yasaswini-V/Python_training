@@ -56,10 +56,10 @@ def main():
             arguments = parts[1:]
 
             try:
-                if command.lower() in command_functions:
-                    command_functions[command.lower()](cursor,*arguments)
-                elif command.lower() in ["quit", "exit", "bye"]:
+                if command.lower() in ["quit", "exit", "bye"]:
                     break
+                command_functions[command.lower()](cursor,*arguments)
+                
             except:
                 print("Command not recognized.")
 
